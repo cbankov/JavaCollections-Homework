@@ -12,7 +12,7 @@ public class ExtractAllUniqueWord {
         Pattern pattern = Pattern.compile("[a-zA-Z]+");
         Matcher matcher = pattern.matcher(input);
 
-        Set<String> results = new HashSet<>();
+        Set<String> results = new TreeSet<>();
         while (matcher.find()) {
             results.add(matcher.group());
         }

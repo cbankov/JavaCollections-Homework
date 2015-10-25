@@ -9,6 +9,7 @@ public class CardsFrequencies {
         String[] input = scanner.nextLine().trim().split(" ");
         int numOfAllCards = input.length;
 
+
         Map<String, Integer> res = new LinkedHashMap<>();
         for (int i = 0; i < input.length; i++) {
             String cardFace = input[i].substring(0, input[i].length() - 1);
