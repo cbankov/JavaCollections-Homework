@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 public class CountSpecifiedWord {
     public static void main(String[] args) {
@@ -11,18 +12,6 @@ public class CountSpecifiedWord {
         System.out.print("Insert needle string = ");
         String needle = scanner.next().toLowerCase();
 
-        int index = 0;
-        int counter = 0;
-        while (true) {
-            int currentMatch = hayStack.indexOf(needle, index);
-            if(currentMatch < 0) {
-                break;
-            }
-
-            counter++;
-            index = currentMatch + 1;
-        }
-
-        System.out.println(counter);
+        System.out.println(Stream.of(hayStack.trim().split("[^a-z]")).filter(s -> s.equals(needle)).count());
     }
 }
