@@ -13,5 +13,6 @@ public class CountSpecifiedWord {
         String needle = scanner.next().toLowerCase();
 
         System.out.println(Stream.of(hayStack.trim().split("[^a-z]")).filter(s -> s.equals(needle)).count());
+
     }
 }
